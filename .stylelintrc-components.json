@@ -1,0 +1,13 @@
+
+{
+  "processors": ["stylelint-processor-styled-components"],
+  "extends": [
+    "stylelint-config-styled-components",
+    "stylelint-config-mirego"
+  ],
+  "rules": {
+    "declaration-colon-newline-after": null,
+    "mirego/prefer-sass-rgba-function": null,
+    "property-no-unknown": null
+  }
+}

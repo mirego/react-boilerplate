@@ -1,24 +1,56 @@
 {
-  "name": "react-boilerplate-3",
-  "version": "0.1.0",
+  "name": "react-boilerplate",
+  "version": "0.0.0",
   "private": true,
+  "engine-strict": true,
+  "engines": {
+    "node": "^10.11.0",
+    "npm": "^6.4.1"
+  },
   "dependencies": {
-    "@mirego/react-scripts": "file:/Users/mdumont/projects/create-react-app/packages/react-scripts",
+    "@mirego/react-scripts": "0.2.0-beta.5",
+    "apollo-boost": "^0.1.16",
+    "emotion": "^9.2.10",
+    "graphql": "^0.13.2",
+    "i18next": "^11.9.0",
+    "i18next-browser-languagedetector": "^2.2.3",
+    "i18next-xhr-backend": "^1.5.1",
     "react": "^16.5.2",
-    "react-dom": "^16.5.2"
+    "react-apollo": "^2.2.1",
+    "react-async-component": "^2.0.0",
+    "react-dom": "^16.5.2",
+    "react-emotion": "^9.2.10",
+    "react-i18next": "^7.13.0",
+    "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1",
+    "simple-css-reset": "^2.0.6"
   },
   "scripts": {
     "start": "mirego-react-scripts start",
     "build": "mirego-react-scripts build",
-    "test": "mirego-react-scripts test --env=jsdom"
+    "test": "mirego-react-scripts test --env=jsdom",
+    "prettier": "prettier --single-quote --no-bracket-spacing --write './src/**/*.{js,ts,tsx,gql,graphql}'",
+    "prettier-check": "prettier --single-quote --no-bracket-spacing --list-different './src/**/*.{js,ts,tsx,gql,graphql}'"
   },
   "eslintConfig": {
     "extends": "react-app"
   },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+  "devDependencies": {
+    "@types/i18next": "^11.9.0",
+    "@types/i18next-browser-languagedetector": "^2.0.1",
+    "@types/i18next-xhr-backend": "^1.4.1",
+    "@types/jest": "^23.3.2",
+    "@types/node": "^10.11.1",
+    "@types/react": "^16.4.14",
+    "@types/react-dom": "^16.0.8",
+    "@types/react-i18next": "^7.8.2",
+    "@types/react-router": "^4.0.31",
+    "@types/react-router-dom": "^4.3.1",
+    "prettier": "^1.14.3",
+    "stylelint": "^8.4.0",
+    "stylelint-config-mirego": "^1.0.4",
+    "stylelint-config-styled-components": "^0.1.1",
+    "stylelint-processor-styled-components": "^1.4.0",
+    "typescript": "^3.0.3"
+  }
 }
