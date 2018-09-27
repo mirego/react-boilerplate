@@ -1,0 +1,24 @@
+{
+  "name": "react-boilerplate-3",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@mirego/react-scripts": "file:/Users/mdumont/projects/create-react-app/packages/react-scripts",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2"
+  },
+  "scripts": {
+    "start": "mirego-react-scripts start",
+    "build": "mirego-react-scripts build",
+    "test": "mirego-react-scripts test --env=jsdom"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}
