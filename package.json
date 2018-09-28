@@ -29,8 +29,8 @@
     "start": "mirego-react-scripts start",
     "build": "mirego-react-scripts build",
     "test": "mirego-react-scripts test --env=jsdom",
-    "prettier": "prettier --single-quote --no-bracket-spacing --write './src/**/*.{js,ts,tsx,gql,graphql}'",
-    "prettier-check": "prettier --single-quote --no-bracket-spacing --list-different './src/**/*.{js,ts,tsx,gql,graphql}'"
+    "prettier": "prettier --write './src/**/*.{js,ts,tsx,gql,graphql}'",
+    "prettier-check": "prettier --list-different './src/**/*.{js,ts,tsx,gql,graphql}'"
   },
   "eslintConfig": {
     "extends": "react-app"
