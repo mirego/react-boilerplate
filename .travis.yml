@@ -1,0 +1,21 @@
+---
+language: node_js
+node_js:
+  - 10.11.0
+
+dist: trusty
+
+cache:
+  directories:
+    - node_modules
+
+install:
+  - npm install
+
+script:
+  - ./scripts/ci-check.sh
+
+notifications:
+  email:
+    on_success: 'change'
+    on_failure: 'change'
