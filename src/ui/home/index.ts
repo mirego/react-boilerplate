@@ -1,6 +1,4 @@
-// Vendor
-import {asyncComponent} from 'react-async-component';
+// Utils
+import Loadable from 'react-boilerplate/lib/loadable';
 
-export default asyncComponent({
-  resolve: () => import('./home')
-});
+export default Loadable(() => import('./home'));
