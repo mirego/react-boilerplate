@@ -39,6 +39,23 @@ Please refer to the [dotenv documentation](https://github.com/motdotla/dotenv) f
 
 To successfully deploy applications from this boilerplate code on Heroku, you must use the [create-react-app buildpack](https://github.com/mars/create-react-app-buildpack).
 
+## Code splitting
+
+Code splitting comes out of the box! To code split on a Route-based level, you simply has to export your route components as such:
+
+```tsx
+// Utils
+import Loadable from 'react-boilerplate/lib/loadable';
+
+export default Loadable(() => import('./about'));
+```
+
+And voilà! All the code from the `./about` module will be bundled has it’s own chunk and only loaded when needed.
+
+This is not limited to routes, any components can be code splitted in the same fashion if needed. It could be a good idea to code split a component that make use of a heavy library, like [Mapbox GL](https://www.mapbox.com/mapbox-gl-js).
+
+[Learn more](https://reactjs.org/docs/code-splitting.html#code-splitting).
+
 ## Linting, testing & type checking
 
 To lint, test and type check your app you can run `./scripts/ci-check.sh`.
@@ -70,7 +87,7 @@ const SomeComponent: SFC = () => (
 
 ### SVG without dynamic styling
 
-If you just wan't to display an SVG with an `<img>` tag, just import it like any other types of images.
+If you just wan’t to display an SVG with an `<img>` tag, just import it like any other types of images.
 
 ```tsx
 // Vendor
