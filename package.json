@@ -8,7 +8,7 @@
     "npm": "^6.4.1"
   },
   "dependencies": {
-    "@mirego/react-scripts": "0.2.0-beta.5",
+    "@mirego/react-scripts": "2.0.2-beta.1",
     "apollo-boost": "^0.1.16",
     "emotion": "^9.2.10",
     "graphql": "^0.13.2",
@@ -53,5 +53,14 @@
     "stylelint-config-styled-components": "^0.1.1",
     "stylelint-processor-styled-components": "^1.4.0",
     "typescript": "^3.0.3"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "jest": {
+    "coverageReporters": ["text-summary"]
   }
 }

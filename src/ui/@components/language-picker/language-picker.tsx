@@ -24,7 +24,6 @@ class LanguagePicker extends Component<EnhancedProps> {
     return (
       <select value={i18n.language} onChange={this.handleChange}>
         <option value={Language.French}>{t(`languages.french`)}</option>
-
         <option value={Language.English}>{t(`languages.english`)}</option>
       </select>
     );

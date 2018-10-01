@@ -29,7 +29,7 @@ header "Running prettier…"
 run npm run prettier-check
 
 header "Running tests…"
-run npm test
+run npm test -- --coverage
 
 header "Creating build…"
 run npm run build
