@@ -12,7 +12,10 @@ const loadLocales = async (
   callback: (locale: any, status: any) => void
 ) => {
   try {
-    const locale = await import(`react-boilerplate/configurations/locales/${url}.json`);
+    const locale = await import('react-boilerplate/configurations/locales/' +
+      url +
+      '.json');
+
     callback(locale, {status: '200'});
   } catch (e) {
     callback(null, {status: '404'});
@@ -32,7 +35,6 @@ const i18NextConfig: InitOptions = {
     escapeValue: false
   },
   load: 'languageOnly',
-  ns: ['common'],
   react: {
     wait: true
   }
