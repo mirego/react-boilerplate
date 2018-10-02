@@ -28,7 +28,7 @@ export const Header: SFC = () => (
     {t => (
       <Container>
         <Logo />
-        <Title>{t('header.title')}</Title>
+        <Title>{t('title')}</Title>
         <Navigation />
       </Container>
     )}
