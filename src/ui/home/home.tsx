@@ -5,6 +5,9 @@ import React from 'react';
 import {Helmet} from 'react-helmet';
 import {I18n} from 'react-i18next';
 
+// Styles
+import styles from './home.module.css';
+
 export const Home = () => (
   <I18n ns={['common', 'home']}>
     {t => (
@@ -14,6 +17,8 @@ export const Home = () => (
         </Helmet>
 
         <h1>{t('home:title')}</h1>
+
+        <p className={styles.example}>This is a CSS module example</p>
       </>
     )}
   </I18n>
