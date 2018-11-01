@@ -3,7 +3,7 @@ import React from 'react';
 
 // Vendor Components
 import {Helmet} from 'react-helmet';
-import {I18n} from 'react-i18next';
+import {NamespacesConsumer as I18n} from 'react-i18next';
 
 export const About = () => (
   <I18n ns={['common', 'about']}>

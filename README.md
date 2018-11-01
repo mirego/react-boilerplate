@@ -25,7 +25,7 @@ This is not limited to routes, any components can be code splitted in the same f
 
 ```tsx
 import React from 'react';
-import styled from 'react-emotion';
+import styled from 'react-emotion/macro';
 
 const Container = styled.div`
   padding: 20px;
@@ -92,7 +92,7 @@ You might want to use both ways. CSS modules might feel more natural to you, whi
 ```tsx
 // button.tsx
 import React from 'react';
-import styled from 'react-emotion';
+import styled from 'react-emotion/macro';
 import styles from './button.module.css';
 
 interface Props {
@@ -121,7 +121,7 @@ If you need to dynamically style an SVG, you can import it as a React component.
 ```tsx
 // Vendor
 import React from 'react';
-import styled from 'react-emotion';
+import styled from 'react-emotion/macro';
 
 // Components
 import {ReactComponent as Logo} from './logo.svg';

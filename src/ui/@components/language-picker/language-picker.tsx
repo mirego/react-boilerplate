@@ -2,20 +2,16 @@
 import React, {ChangeEvent, Component} from 'react';
 
 // Vendor Components
-import {
-  InjectedI18nProps,
-  InjectedTranslateProps,
-  translate
-} from 'react-i18next';
+import {WithI18n, withI18n} from 'react-i18next';
 
 // Types
 import {Language} from 'react-boilerplate/types/language';
 
 interface Props {}
 
-type EnhancedProps = Props & InjectedI18nProps & InjectedTranslateProps;
+type EnhancedProps = Props & WithI18n;
 
-const enhance = translate();
+const enhance = withI18n();
 
 class LanguagePicker extends Component<EnhancedProps> {
   public render() {

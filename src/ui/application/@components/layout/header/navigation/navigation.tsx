@@ -1,9 +1,9 @@
 // Vendor
 import React, {SFC} from 'react';
-import styled from 'react-emotion';
+import styled from 'react-emotion/macro';
 
 // Vendor Components
-import {I18n} from 'react-i18next';
+import {NamespacesConsumer as I18n} from 'react-i18next';
 import {Link as OriginalLink} from 'react-router-dom';
 
 // Components
@@ -30,7 +30,7 @@ const Link = styled(OriginalLink)`
 `;
 
 export const Navigation: SFC = () => (
-  <I18n>
+  <I18n ns="common">
     {t => (
       <Container>
         <Link to="/">{t('header.links.home')}</Link>

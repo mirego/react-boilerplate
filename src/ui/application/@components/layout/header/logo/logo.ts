@@ -1,5 +1,5 @@
 // Vendor
-import styled from 'react-emotion';
+import styled from 'react-emotion/macro';
 
 // Components
 import {ReactComponent as OriginalLogo} from './logo.svg';

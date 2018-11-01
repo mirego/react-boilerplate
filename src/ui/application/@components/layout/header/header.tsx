@@ -1,9 +1,9 @@
 // Vendor
 import React, {SFC} from 'react';
-import styled from 'react-emotion';
+import styled from 'react-emotion/macro';
 
 // Vendor Components
-import {I18n} from 'react-i18next';
+import {NamespacesConsumer as I18n} from 'react-i18next';
 
 // Components
 import Logo from './logo';
@@ -24,7 +24,7 @@ const Title = styled.span`
 `;
 
 export const Header: SFC = () => (
-  <I18n>
+  <I18n ns="common">
     {t => (
       <Container>
         <Logo />

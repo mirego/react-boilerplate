@@ -1,6 +1,6 @@
 // Vendor
 import React, {SFC} from 'react';
-import styled from 'react-emotion';
+import styled from 'react-emotion/macro';
 
 // Components
 import Header from './header';

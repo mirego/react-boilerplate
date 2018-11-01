@@ -3,9 +3,8 @@
     "allowJs": false,
     "allowUnreachableCode": false,
     "allowSyntheticDefaultImports": true,
-    "baseUrl": ".",
     "forceConsistentCasingInFileNames": true,
-    "jsx": "react",
+    "jsx": "preserve",
     "lib": [
       "es7",
       "dom",
@@ -25,10 +24,17 @@
     "strict": true,
     "suppressImplicitAnyIndexErrors": true,
     "target": "es5",
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "baseUrl": ".",
     "paths": {
       "react-boilerplate/*": [
         "./src/*"
       ]
     }
-  }
+  },
+  "include": [
+    "src",
+    "typings"
+  ]
 }
