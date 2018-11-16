@@ -25,8 +25,17 @@ header() {
   echo "\n\n${YELLOW}▶ $1${NO_COLOR}"
 }
 
-header "Running prettier…"
+header "Running prettier-check…"
 run npm run prettier-check
+
+header "Running lint-scripts…"
+run npm run lint-scripts
+
+header "Running lint-styles…"
+run npm run lint-styles
+
+header "Running lint-styled-components…"
+run npm run lint-styled-components
 
 header "Running tests…"
 run npm test -- --coverage

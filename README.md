@@ -6,9 +6,9 @@ Code splitting comes out of the box! To code split on a Route-based level, you s
 
 ```tsx
 // Utils
-import Loadable from 'react-boilerplate/lib/loadable';
+import Lazy from 'react-boilerplate/ui/@components/lazy';
 
-export default Loadable(() => import('./about'));
+export default Lazy(() => import('./about'));
 ```
 
 And voilà! All the code from the `./about` module will be bundled has it’s own chunk and only loaded when needed.

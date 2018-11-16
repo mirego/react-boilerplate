@@ -13,13 +13,19 @@ import Home from 'react-boilerplate/ui/home';
 // Components
 import Layout from './@components/layout';
 
-// Services
-import ApolloService from 'react-boilerplate/services/apollo';
-import I18nextService from 'react-boilerplate/services/i18next';
+// Vendor Types
+import {ApolloClient} from 'apollo-boost';
+import {i18n as I18next} from 'i18next';
 
-const Application: SFC = () => (
-  <ApolloProvider client={ApolloService.client}>
-    <I18nextProvider i18n={I18nextService.i18n}>
+// Types
+interface Props {
+  apolloClient: ApolloClient<any>;
+  i18next: I18next;
+}
+
+const Application: SFC<Props> = ({apolloClient, i18next}) => (
+  <ApolloProvider client={apolloClient}>
+    <I18nextProvider i18n={i18next}>
       <Router>
         <Layout>
           <Switch>

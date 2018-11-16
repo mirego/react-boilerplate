@@ -1,4 +1,4 @@
 // Utils
-import Loadable from 'react-boilerplate/lib/loadable';
+import Lazy from 'react-boilerplate/ui/@components/lazy';
 
-export default Loadable(() => import('./about'));
+export default Lazy(() => import('./about'));

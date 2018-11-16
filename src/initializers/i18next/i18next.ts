@@ -40,14 +40,9 @@ const i18NextConfig: InitOptions = {
   }
 };
 
-export class I18nextService {
-  private _i18n = I18next.use(XhrBackend)
-    .use(LanguageDetector)
-    .init(i18NextConfig);
+const i18next = I18next.use(XhrBackend)
+  .use(LanguageDetector)
+  .init(i18NextConfig);
 
-  public get i18n() {
-    return this._i18n;
-  }
-}
-
-export default new I18nextService();
+export const createI18next = () => i18next.cloneInstance();
+export default createI18next;
