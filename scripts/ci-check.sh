@@ -14,9 +14,11 @@ run() {
   last_exit_status=${?}
 
   if [ ${last_exit_status} -ne 0 ]; then
-    echo "\n${RED}↳ Something went wrong. Program exited with ${last_exit_status} ✘${NO_COLOR}"
+    echo "\n${RED}${@}${NO_COLOR}"
+    echo "${RED}↳ Something went wrong. Program exited with ${last_exit_status} ✘${NO_COLOR}"
     error_status=${last_exit_status}
   else
+    echo "\n${GREEN}${@}${NO_COLOR}"
     echo "${GREEN}↳ Passed ✔${NO_COLOR}"
   fi
 }
