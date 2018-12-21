@@ -9,5 +9,6 @@
   "languages": {
     "english": "English",
     "french": "French"
-  }
+  },
+  "loading": "Loading..."
 }

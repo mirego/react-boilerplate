@@ -1,5 +1,5 @@
 // Vendor
-import React, {SFC} from 'react';
+import React, {FunctionComponent} from 'react';
 
 // Vendor Components
 import {ApolloProvider} from 'react-apollo';
@@ -12,18 +12,19 @@ import Home from 'react-boilerplate/ui/home';
 
 // Components
 import Layout from './@components/layout';
+import Version from './@components/version';
 
 // Vendor Types
 import {ApolloClient} from 'apollo-boost';
-import {i18n as I18next} from 'i18next';
+import I18next from 'i18next';
 
 // Types
 interface Props {
   apolloClient: ApolloClient<any>;
-  i18next: I18next;
+  i18next: I18next.i18n;
 }
 
-const Application: SFC<Props> = ({apolloClient, i18next}) => (
+const Application: FunctionComponent<Props> = ({apolloClient, i18next}) => (
   <ApolloProvider client={apolloClient}>
     <I18nextProvider i18n={i18next}>
       <Router>
@@ -32,6 +33,8 @@ const Application: SFC<Props> = ({apolloClient, i18next}) => (
             <Route exact path="/" component={Home} />
             <Route path="/about" component={About} />
           </Switch>
+
+          <Version />
         </Layout>
       </Router>
     </I18nextProvider>

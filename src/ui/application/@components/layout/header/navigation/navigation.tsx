@@ -1,5 +1,5 @@
 // Vendor
-import React, {SFC} from 'react';
+import React, {FunctionComponent} from 'react';
 import styled from 'react-emotion/macro';
 
 // Vendor Components
@@ -7,7 +7,7 @@ import {NamespacesConsumer as I18n} from 'react-i18next';
 import {Link as OriginalLink} from 'react-router-dom';
 
 // Components
-import LanguagePicker from 'react-boilerplate/ui/@components/language-picker';
+import LanguageSwitcher from './language-switcher';
 
 const Container = styled.nav`
   display: flex;
@@ -29,13 +29,13 @@ const Link = styled(OriginalLink)`
   }
 `;
 
-export const Navigation: SFC = () => (
+export const Navigation: FunctionComponent = () => (
   <I18n ns="common">
     {t => (
       <Container>
         <Link to="/">{t('header.links.home')}</Link>
         <Link to="/about">{t('header.links.about')}</Link>
-        <LanguagePicker />
+        <LanguageSwitcher />
       </Container>
     )}
   </I18n>

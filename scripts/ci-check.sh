@@ -9,6 +9,10 @@ GREEN_BOLD='\033[1;32m'
 YELLOW='\033[0;33m'
 NO_COLOR='\033[0m'
 
+header() {
+  echo "\n\n${YELLOW}▶ $1${NO_COLOR}"
+}
+
 run() {
   eval "${@}"
   last_exit_status=${?}
@@ -23,27 +27,17 @@ run() {
   fi
 }
 
-header() {
-  echo "\n\n${YELLOW}▶ $1${NO_COLOR}"
-}
+header "Code format and linting…"
+run make lint
 
-header "Running prettier-check…"
-run npm run prettier-check
+header "Run tests…"
+run make test-coverage
 
-header "Running lint-scripts…"
-run npm run lint-scripts
+header "Run typecheck…"
+run make typecheck
 
-header "Running lint-styles…"
-run npm run lint-styles
-
-header "Running lint-styled-components…"
-run npm run lint-styled-components
-
-header "Running tests…"
-run npm test -- --coverage
-
-header "Creating build…"
-run npm run build
+header "Build…"
+run make build-app
 
 if [ ${error_status} -ne 0 ]; then
   echo "\n\n${YELLOW}▶▶ One of the checks ${RED_BOLD}failed${YELLOW}. Please fix it before committing.${NO_COLOR}"

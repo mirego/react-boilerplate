@@ -7,6 +7,7 @@
     "jsx": "preserve",
     "lib": [
       "es7",
+      "es2017",
       "dom",
       "esnext.asynciterable"
     ],
@@ -23,15 +24,15 @@
     "sourceMap": true,
     "strict": true,
     "suppressImplicitAnyIndexErrors": true,
-    "target": "es5",
+    "target": "es2018",
     "esModuleInterop": true,
-    "isolatedModules": true,
     "baseUrl": ".",
     "paths": {
       "react-boilerplate/*": [
         "./src/*"
       ]
-    }
+    },
+    "isolatedModules": true
   },
   "include": [
     "src",

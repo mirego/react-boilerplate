@@ -1,5 +1,5 @@
 // Vendor
-import React, {SFC} from 'react';
+import React, {FunctionComponent} from 'react';
 import styled from 'react-emotion/macro';
 
 // Vendor Components
@@ -23,7 +23,7 @@ const Title = styled.span`
   color: #fff;
 `;
 
-export const Header: SFC = () => (
+export const Header: FunctionComponent = () => (
   <I18n ns="common">
     {t => (
       <Container>

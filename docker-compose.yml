@@ -1,0 +1,13 @@
+version: '3.3'
+services:
+  application:
+    container_name: react-boilerplate
+    env_file: .env.development
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - '.:/usr/src/app'
+      - '/usr/src/app/node_modules'
+    ports:
+      - '3000:3000'

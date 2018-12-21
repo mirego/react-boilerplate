@@ -14,7 +14,7 @@ type EnhancedProps = Props & WithI18n;
 const enhance = withI18n();
 
 class LanguagePicker extends Component<EnhancedProps> {
-  public render() {
+  render() {
     const {t, i18n} = this.props;
 
     return (

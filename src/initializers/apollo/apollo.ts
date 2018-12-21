@@ -2,10 +2,11 @@
 import ApolloClient from 'apollo-boost';
 
 // Configurations
-import {API_URL} from 'react-boilerplate/configurations/environment';
+import config from 'react-boilerplate/config';
 
 export const createApolloClient = () => {
-  const client = new ApolloClient({uri: API_URL});
+  const client = new ApolloClient({uri: config.apollo.apiUrl});
+
   return client;
 };
 

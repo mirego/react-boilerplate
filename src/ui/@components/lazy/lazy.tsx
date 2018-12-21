@@ -1,13 +1,24 @@
 // Vendor
-import React, {SFC} from 'react';
+import React, {FunctionComponent} from 'react';
 import Lazy, {LoadingComponentProps} from 'react-loadable';
+
+// Vendor Components
+import {NamespacesConsumer as I18n} from 'react-i18next';
 
 // Types
 type Loader<Props> = () => Promise<{default: React.ComponentType<Props>}>;
 
-const Loading: SFC<LoadingComponentProps> = ({error, pastDelay}) => {
+const Loading: FunctionComponent<LoadingComponentProps> = ({
+  error,
+  pastDelay
+}) => {
   if (error) throw error;
-  return pastDelay ? <div>Loading...</div> : null;
+
+  return pastDelay ? (
+    <div>
+      <I18n>{t => t('loading')}</I18n>
+    </div>
+  ) : null;
 };
 
 export default function CreateLazy<Props>(loader: Loader<Props>) {

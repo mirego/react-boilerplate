@@ -18,7 +18,7 @@ export const Home = () => (
 
         <h1>{t('home:title')}</h1>
 
-        <p className={styles.example}>This is a CSS module example</p>
+        <p className={styles.example}>{t('home:cssModuleExample')}</p>
       </>
     )}
   </I18n>

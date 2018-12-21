@@ -1,5 +1,5 @@
 // Vendor
-import React, {SFC} from 'react';
+import React, {FunctionComponent} from 'react';
 import styled from 'react-emotion/macro';
 
 // Components
@@ -9,7 +9,7 @@ const Content = styled.div`
   padding: 25px;
 `;
 
-export const Layout: SFC = ({children}) => (
+export const Layout: FunctionComponent = ({children}) => (
   <>
     <Header />
     <Content>{children}</Content>
