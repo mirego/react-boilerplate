@@ -4,8 +4,8 @@
   "private": true,
   "engine-strict": true,
   "engines": {
-    "node": "^10.11.0",
-    "npm": "^6.4.1"
+    "node": "10.15.0",
+    "npm": "6.4.1"
   },
   "dependencies": {
     "@mirego/react-scripts": "2.1.3",
@@ -29,8 +29,12 @@
   },
   "scripts": {
     "start": "mirego-react-scripts start",
-    "build": "mirego-react-scripts build",
-    "test": "TZ=UTC mirego-react-scripts test"
+    "build": "./scripts/enforce-engine-versions.js && mirego-react-scripts build",
+    "test": "TZ=UTC mirego-react-scripts test",
+    "enforce-engine-versions": "./scripts/enforce-engine-versions.js",
+    "preinstall": "npm run enforce-engine-versions",
+    "prestart": "npm run enforce-engine-versions",
+    "prestest": "npm run enforce-engine-versions"
   },
   "eslintConfig": {
     "extends": "react-app"
