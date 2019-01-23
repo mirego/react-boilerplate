@@ -41,8 +41,8 @@
 
 L’usage de [nvm](https://github.com/creationix/nvm) est recommandé pour gérer les différentes versions de Node.js.
 
-- node.js (`^10.11.0`)
-- npm (`^6.4.1`)
+- node.js (`10.15.0`)
+- npm (`6.4.1`)
 
 ## 🏎 Démarrage
 
