@@ -1,7 +1,5 @@
-// Vendor
+import styled from '@emotion/styled/macro';
 import React from 'react';
-import styled from 'react-emotion/macro';
-
 import config from 'react-boilerplate/config';
 
 const VersionNumber = styled.div`
@@ -17,7 +15,7 @@ const VersionNumber = styled.div`
   color: #fff;
 `;
 
-export const Version = () => {
+const Version = () => {
   if (!config.versionNumber.show) return null;
 
   return <VersionNumber>{config.application.version}</VersionNumber>;

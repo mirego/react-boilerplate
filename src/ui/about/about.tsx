@@ -1,24 +1,12 @@
-// Vendor
-import React from 'react';
+import React, {FunctionComponent} from 'react';
+import useTitle from 'react-boilerplate/ui/@hooks/use-title';
+import {useTranslation} from 'react-i18next';
 
-// Vendor Components
-import {Helmet} from 'react-helmet';
-import {NamespacesConsumer as I18n} from 'react-i18next';
+const About: FunctionComponent = () => {
+  const {t} = useTranslation(['common', 'about']);
+  useTitle(`${t('title')} | ${t('about:title')}`);
 
-export const About = () => (
-  <I18n ns={['common', 'about']}>
-    {t => (
-      <>
-        <Helmet>
-          <title>
-            {t('title')} | {t('about:title')}
-          </title>
-        </Helmet>
-
-        <h1>{t('about:title')}</h1>
-      </>
-    )}
-  </I18n>
-);
+  return <h1>{t('about:title')}</h1>;
+};
 
 export default About;

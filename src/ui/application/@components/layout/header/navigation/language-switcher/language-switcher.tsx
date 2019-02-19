@@ -1,11 +1,6 @@
-// Vendor
-import React, {Component} from 'react';
-import styled from 'react-emotion/macro';
-
-// Vendor Components
-import {withI18n, WithI18n} from 'react-i18next';
-
-const enhance = withI18n();
+import styled from '@emotion/styled/macro';
+import React, {FunctionComponent, useCallback} from 'react';
+import {useTranslation} from 'react-i18next';
 
 const SwitcherButton = styled.button`
   margin: 15px;
@@ -19,25 +14,18 @@ const SwitcherButton = styled.button`
   }
 `;
 
-const otherLanguage = (language: string) => {
-  return language === 'fr' ? 'en' : 'fr';
+const LanguageSwitcher: FunctionComponent = () => {
+  const {i18n} = useTranslation();
+  const nextLanguage = i18n.language === 'fr' ? 'en' : 'fr';
+  const switchLanguage = useCallback(() => {
+    i18n.changeLanguage(nextLanguage);
+  }, [i18n.changeLanguage, nextLanguage]);
+
+  return (
+    <SwitcherButton color="secondary" onClick={switchLanguage}>
+      {nextLanguage}
+    </SwitcherButton>
+  );
 };
 
-class LanguageSwitcher extends Component<WithI18n> {
-  render() {
-    const {i18n} = this.props;
-
-    return (
-      <SwitcherButton color="secondary" onClick={this.switchLanguage}>
-        {otherLanguage(i18n.language)}
-      </SwitcherButton>
-    );
-  }
-
-  private switchLanguage = () => {
-    const {i18n} = this.props;
-    i18n.changeLanguage(otherLanguage(i18n.language));
-  };
-}
-
-export default enhance(LanguageSwitcher);
+export default LanguageSwitcher;

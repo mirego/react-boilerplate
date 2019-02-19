@@ -1,7 +1,7 @@
 ---
 language: node_js
 node_js:
-  - 10.15.0
+  - 11.10.0
 
 dist: trusty
 
@@ -10,7 +10,7 @@ cache:
     - node_modules
 
 install:
-  - npm install -g npm@6.4.1
+  - npm install -g npm@6.8.0
   - npm install
 
 script:

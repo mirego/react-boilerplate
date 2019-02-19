@@ -1,13 +1,8 @@
-// Vendor
 import ApolloClient from 'apollo-boost';
-
-// Configurations
 import config from 'react-boilerplate/config';
 
-export const createApolloClient = () => {
-  const client = new ApolloClient({uri: config.apollo.apiUrl});
-
-  return client;
+const initializeApollo = () => {
+  return new ApolloClient({uri: config.apollo.apiUrl});
 };
 
-export default createApolloClient;
+export default initializeApollo;

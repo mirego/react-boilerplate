@@ -1,4 +1,3 @@
-// Utilities
 const parseEnvBoolean = (value: string, fallback: boolean = false) => {
   let bool = fallback;
 
@@ -9,7 +8,6 @@ const parseEnvBoolean = (value: string, fallback: boolean = false) => {
   return bool;
 };
 
-// Configuration
 import {version} from '../../package.json';
 
 // tslint:disable no-non-null-assertion
@@ -20,6 +18,11 @@ const config = {
 
   apollo: {
     apiUrl: process.env.REACT_APP_API_URL!
+  },
+
+  sentry: {
+    dsn: process.env.REACT_APP_SENTRY_DSN,
+    environment: process.env.REACT_APP_SENTRY_ENVIRONMENT_NAME!
   },
 
   versionNumber: {

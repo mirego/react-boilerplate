@@ -1,11 +1,6 @@
-// Vendor
+import styled from '@emotion/styled/macro';
 import React, {FunctionComponent} from 'react';
-import styled from 'react-emotion/macro';
-
-// Vendor Components
-import {NamespacesConsumer as I18n} from 'react-i18next';
-
-// Components
+import {useTranslation} from 'react-i18next';
 import Logo from './logo';
 import Navigation from './navigation';
 
@@ -23,16 +18,16 @@ const Title = styled.span`
   color: #fff;
 `;
 
-export const Header: FunctionComponent = () => (
-  <I18n ns="common">
-    {t => (
-      <Container>
-        <Logo />
-        <Title>{t('title')}</Title>
-        <Navigation />
-      </Container>
-    )}
-  </I18n>
-);
+const Header: FunctionComponent = () => {
+  const {t} = useTranslation();
+
+  return (
+    <Container>
+      <Logo />
+      <Title>{t('title')}</Title>
+      <Navigation />
+    </Container>
+  );
+};
 
 export default Header;

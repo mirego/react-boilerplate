@@ -1,12 +1,7 @@
-// Vendor
+import styled from '@emotion/styled/macro';
 import React, {FunctionComponent} from 'react';
-import styled from 'react-emotion/macro';
-
-// Vendor Components
-import {NamespacesConsumer as I18n} from 'react-i18next';
+import {useTranslation} from 'react-i18next';
 import {Link as OriginalLink} from 'react-router-dom';
-
-// Components
 import LanguageSwitcher from './language-switcher';
 
 const Container = styled.nav`
@@ -29,16 +24,16 @@ const Link = styled(OriginalLink)`
   }
 `;
 
-export const Navigation: FunctionComponent = () => (
-  <I18n ns="common">
-    {t => (
-      <Container>
-        <Link to="/">{t('header.links.home')}</Link>
-        <Link to="/about">{t('header.links.about')}</Link>
-        <LanguageSwitcher />
-      </Container>
-    )}
-  </I18n>
-);
+const Navigation: FunctionComponent = () => {
+  const {t} = useTranslation();
+
+  return (
+    <Container>
+      <Link to="/">{t('header.links.home')}</Link>
+      <Link to="/about">{t('header.links.about')}</Link>
+      <LanguageSwitcher />
+    </Container>
+  );
+};
 
 export default Navigation;

@@ -1,4 +1,3 @@
-// Utils
-import Lazy from 'react-boilerplate/ui/@components/lazy';
+import {lazy} from 'react';
 
-export default Lazy(() => import('./home'));
+export default lazy(() => import('./home'));

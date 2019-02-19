@@ -1,27 +1,20 @@
-// Vendor
-import React from 'react';
-
-// Vendor Components
-import {Helmet} from 'react-helmet';
-import {NamespacesConsumer as I18n} from 'react-i18next';
-
-// Styles
+import React, {FunctionComponent} from 'react';
+import useTitle from 'react-boilerplate/ui/@hooks/use-title';
+import {useTranslation} from 'react-i18next';
 import styles from './home.module.css';
 
-export const Home = () => (
-  <I18n ns={['common', 'home']}>
-    {t => (
-      <>
-        <Helmet>
-          <title>{t('title')}</title>
-        </Helmet>
+const Home: FunctionComponent = () => {
+  const {t} = useTranslation(['common', 'home']);
 
-        <h1>{t('home:title')}</h1>
+  useTitle(t('title'));
 
-        <p className={styles.example}>{t('home:cssModuleExample')}</p>
-      </>
-    )}
-  </I18n>
-);
+  return (
+    <>
+      <h1>{t('home:title')}</h1>
+
+      <p className={styles.example}>{t('home:cssModuleExample')}</p>
+    </>
+  );
+};
 
 export default Home;

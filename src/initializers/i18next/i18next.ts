@@ -1,28 +1,9 @@
-// Vendor
 import I18next from 'i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
-import XhrBackend from 'i18next-xhr-backend';
-
-const loadLocales = async (
-  url: string,
-  _options: any,
-  callback: (locale: any, status: any) => void
-) => {
-  try {
-    // tslint:disable-next-line prefer-template
-    const locale = await import('react-boilerplate/locales/' + url + '.json');
-    callback(locale, {status: '200'});
-  } catch (e) {
-    callback(null, {status: '404'});
-  }
-};
+import resources from 'react-boilerplate/locales';
+import {initReactI18next} from 'react-i18next';
 
 const i18NextConfig: I18next.InitOptions = {
-  backend: {
-    ajax: loadLocales,
-    loadPath: '{{lng}}/{{ns}}',
-    parse: (data: any) => data
-  },
   debug: process.env.NODE_ENV === 'development',
   defaultNS: 'common',
   fallbackLng: 'en',
@@ -30,19 +11,29 @@ const i18NextConfig: I18next.InitOptions = {
     escapeValue: false
   },
   load: 'languageOnly',
-  react: {
-    wait: true
+  resources,
+  whitelist: ['fr', 'en']
+};
+
+export const LanguageSanitizer = {
+  type: '3rdParty',
+
+  init(i18n: I18next.i18n) {
+    const language = i18n.language.split('-').shift();
+
+    if (language && language !== i18n.language) {
+      i18n.changeLanguage(language);
+    }
   }
 };
 
-export const createI18next = () => {
-  if (I18next.isInitialized) {
-    return I18next.cloneInstance();
-  }
-
-  return I18next.use(XhrBackend)
+const initializeI18next = () => {
+  I18next.use(initReactI18next)
     .use(LanguageDetector)
+    .use(LanguageSanitizer)
     .init(i18NextConfig);
+
+  return I18next;
 };
 
-export default createI18next;
+export default initializeI18next;
