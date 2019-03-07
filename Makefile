@@ -62,7 +62,7 @@ lint: lint-prettier lint-tslint lint-stylelint lint-stylelint-components ## Run 
 
 .PHONY: lint-prettier
 lint-prettier:
-	./node_modules/.bin/prettier -l '{src,typings,__mocks__}/**/*.{js,ts,tsx}'
+	./node_modules/.bin/prettier -l '{src,typings,__mocks__}/**/*.{js,ts,tsx}' '**/*.md'
 
 .PHONY: lint-tslint
 lint-tslint:
@@ -96,7 +96,7 @@ format: format-prettier ## Run formatting tools on the code
 
 .PHONY: format-prettier
 format-prettier:
-	./node_modules/.bin/prettier --write '{src,typings,__mocks__}/**/*.{js,ts,tsx}'
+	./node_modules/.bin/prettier --write '{src,typings,__mocks__}/**/*.{js,ts,tsx}' '**/*.md'
 
 .PHONY: typecheck
 typecheck:

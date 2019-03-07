@@ -1,11 +1,11 @@
 # react-boilerplate
 
 | Section                                               | Description                                                     |
-| ---                                                   | ---                                                             |
+| ----------------------------------------------------- | --------------------------------------------------------------- |
 | [🎯 Objectives and context](#-objectives-and-context) | Project introduction and context                                |
 | [🚧 Dependencies](#-dependencies)                     | Technical dependencies and how to install them                  |
-| [🏎 Kickstart](#kickstart)                            | Details on how to kickstart development on the project          |
-| [🏗 Code & architecture](#-code--architecture)        | Details on the application modules and technical specifications |
+| [🏎 Kickstart](#kickstart)                             | Details on how to kickstart development on the project          |
+| [🏗 Code & architecture](#-code--architecture)         | Details on the application modules and technical specifications |
 | [🔭 Possible improvements](#-possible-improvements)   | Possible code refactors, improvements and ideas                 |
 | [🚑 Troubleshooting](#-troubleshooting)               | Recurring problems and proven solutions                         |
 | [🚀 Deploy](#-deploy)                                 | Deployment details for various enviroments                      |
@@ -17,7 +17,7 @@
 ### Browser support
 
 | Browser | OS  | Constraint |
-| ---     | --- | ---        |
+| ------- | --- | ---------- |
 | …       | …   | …          |
 
 ## 🚧 Dependencies
@@ -76,10 +76,10 @@ $ make test-coverage
 
 Several linting and formatting tools can be ran to ensure coding style consistency:
 
-* `make lint-prettier` ensures all code is properly formatted
-* `make lint-tslint` ensures TypeScript code follows our best practices
-* `make lint-stylelint` ensures CSS code follows our best practices
-* `make lint-stylelint-components` ensures CSS code in JavaScript modules follows our best practices
+- `make lint-prettier` ensures all code is properly formatted
+- `make lint-tslint` ensures TypeScript code follows our best practices
+- `make lint-stylelint` ensures CSS code follows our best practices
+- `make lint-stylelint-components` ensures CSS code in JavaScript modules follows our best practices
 
 ### Continuous integration
 
@@ -96,7 +96,7 @@ $ ./scripts/ci-check.sh
 ## 🔭 Possible improvements
 
 | Description | Priority | Complexity | Ideas |
-| ---         | ---      | ---        | ---   |
+| ----------- | -------- | ---------- | ----- |
 | …           | …        | …          | …     |
 
 ## 🚑 Troubleshooting
