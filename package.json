@@ -29,7 +29,7 @@
   },
   "scripts": {
     "start": "mirego-react-scripts start",
-    "build": "./scripts/enforce-engine-versions.js && mirego-react-scripts build",
+    "build": "npm run enforce-engine-versions && mirego-react-scripts build",
     "test": "TZ=UTC mirego-react-scripts test",
     "enforce-engine-versions": "./scripts/enforce-engine-versions.js",
     "preinstall": "npm run enforce-engine-versions",
