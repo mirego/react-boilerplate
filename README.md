@@ -7,10 +7,9 @@
 
 1. Clone this project (`git clone https://github.com/mirego/react-boilerplate.git`)
 2. Delete the internal Git directory (`rm -rf .git`)
-3. Run the project renaming script (`./project-renamer.sh your-project-name`)
-4. Delete the project renaming script (`rm -rf ./project-renamer.sh`)
-5. Create a new Git repository (`git init`)
-6. Create the initial Git commit (`git commit -a -m "Initial commit"`)
+3. Run the boilerplate setup script (`./boilerplate-setup.sh YourProjectName`)
+4. Create a new Git repository (`git init`)
+5. Create the initial Git commit (`git commit -a -m "Initial commit"`)
 
 ## Content
 
