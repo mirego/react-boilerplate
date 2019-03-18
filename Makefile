@@ -62,26 +62,26 @@ lint: lint-prettier lint-tslint lint-stylelint lint-stylelint-components ## Run 
 
 .PHONY: lint-prettier
 lint-prettier:
-	./node_modules/.bin/prettier -l '{src,typings,__mocks__}/**/*.{js,ts,tsx}' '**/*.md'
+	npx prettier -l '{src,typings,__mocks__}/**/*.{js,ts,tsx}' '**/*.md'
 
 .PHONY: lint-tslint
 lint-tslint:
-	./node_modules/.bin/tslint -c tslint.json '{src,typings,__mocks__}/**/*.{js,ts,tsx}'
+	npx tslint -c tslint.json '{src,typings,__mocks__}/**/*.{js,ts,tsx}'
 
 .PHONY: lint-stylelint
 lint-stylelint:
-	./node_modules/.bin/stylelint --config .stylelintrc.json 'src/**/*.css'
+	npx stylelint --config .stylelintrc.json 'src/**/*.css'
 
 .PHONY: lint-stylelint-components
 lint-stylelint-components:
-	./node_modules/.bin/stylelint --config .stylelintrc-components.json 'src/**/*.{js,ts,tsx}'
+	npx stylelint --config .stylelintrc-components.json 'src/**/*.{js,ts,tsx}'
 
 .PHONY: lint-fix
 lint-fix: format lint-tslint-fix
 
 .PHONY: lint-tslint-fix
 lint-tslint-fix:
-	./node_modules/.bin/tslint -c tslint.json --fix '{src,typings,__mocks__}/**/*.{js,ts,tsx}'
+	npx tslint -c tslint.json --fix '{src,typings,__mocks__}/**/*.{js,ts,tsx}'
 
 .PHONY: test
 test: ## Run the test suite
@@ -96,11 +96,11 @@ format: format-prettier ## Run formatting tools on the code
 
 .PHONY: format-prettier
 format-prettier:
-	./node_modules/.bin/prettier --write '{src,typings,__mocks__}/**/*.{js,ts,tsx}' '**/*.md'
+	npx prettier --write '{src,typings,__mocks__}/**/*.{js,ts,tsx}' '**/*.md'
 
 .PHONY: typecheck
 typecheck:
-	./node_modules/.bin/tsc
+	npx tsc
 
 .PHONY: build-app
 build-app:
