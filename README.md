@@ -3,6 +3,19 @@
   <p><br />This repository is the stable base upon which we build our React projects at Mirego.<br />We want to share it with the world so you can build awesome React applications too.</p>
 </div>
 
+## Content
+
+This boilerplate comes with batteries included, you’ll find:
+
+- Tests with [jest](https://jestjs.io), with coverage
+- Linting with [tslint](https://palantir.github.io/tslint) and [stylelint](https://stylelint.io)
+- Formatting with [Prettier](https://prettier.io)
+- A [GraphQL](https://graphql.org) setup powered by [Apollo](https://www.apollographql.com)
+- Translations powered by [i18next](https://www.i18next.com)
+- [TypeScript](https://www.typescriptlang.org)
+- Styled components with [emotions](https://emotion.sh)
+- Routing with [react-router](https://reacttraining.com/react-router/)
+
 ## Usage
 
 1. Clone this project (`git clone https://github.com/mirego/react-boilerplate.git`)
@@ -10,10 +23,6 @@
 3. Run the boilerplate setup script (`./boilerplate-setup.sh YourProjectName`)
 4. Create a new Git repository (`git init`)
 5. Create the initial Git commit (`git commit -a -m "Initial commit"`)
-
-## Content
-
-_To be written_
 
 ## License
 
