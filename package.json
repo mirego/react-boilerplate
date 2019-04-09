@@ -1,11 +1,11 @@
 {
   "name": "react-boilerplate",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "private": true,
   "engine-strict": true,
   "engines": {
-    "node": "~> 11.13",
-    "npm": "~> 6.7"
+    "node": "~11.13",
+    "npm": "~6.7"
   },
   "dependencies": {
     "@emotion/core": "^10.0.7",
