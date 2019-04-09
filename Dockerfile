@@ -1,4 +1,4 @@
-FROM node:10.14-alpine
+FROM node:11.13-alpine
 
 WORKDIR /opt/app
 
@@ -6,7 +6,9 @@ RUN npm install -g serve
 
 COPY package.json package-lock.json ./
 
-RUN npm install
+COPY scripts ./scripts
+
+RUN npm ci --no-audit --no-color --unsafe-perm
 
 COPY . .
 

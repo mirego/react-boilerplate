@@ -4,8 +4,8 @@
   "private": true,
   "engine-strict": true,
   "engines": {
-    "node": "11.10.0",
-    "npm": "6.8.0"
+    "node": "~> 11.13",
+    "npm": "~> 6.7"
   },
   "dependencies": {
     "@emotion/core": "^10.0.7",
@@ -33,6 +33,7 @@
     "test": "TZ=UTC mirego-react-scripts test",
     "enforce-engine-versions": "./scripts/enforce-engine-versions.js",
     "preinstall": "npm run enforce-engine-versions",
+    "postinstall": "npm run enforce-engine-versions",
     "prestart": "npm run enforce-engine-versions",
     "prestest": "npm run enforce-engine-versions"
   },
