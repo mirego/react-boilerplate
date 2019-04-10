@@ -52,6 +52,7 @@ build: ## Build the Docker image
 
 .PHONY: push
 push: ## Push the Docker image
+	docker tag $(APP_NAME):$(DOCKER_IMAGE_TAG) $(DOCKER_REGISTRY)/$(APP_NAME):$(DOCKER_IMAGE_TAG)
 	docker push $(DOCKER_REGISTRY)/$(APP_NAME):$(DOCKER_IMAGE_TAG)
 
 # CI targets
