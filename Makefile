@@ -111,7 +111,7 @@ build-app:
 # -------------------
 
 .PHONY: dev-start
-dev-start: ## Start every service of in the Docker Compose environment
+dev-start: build ## Start every service of in the Docker Compose environment
 	docker-compose up
 
 .PHONY: dev-stop
