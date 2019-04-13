@@ -108,3 +108,7 @@ $ ./scripts/ci-check.sh
 ### Versions & branches
 
 Each deployment is made from a Git tag. The codebase version is managed with [`incr`](https://github.com/jcouture/incr).
+
+### Container
+
+A Docker image running a Node.js server can be created with `make build`, tested with `make dev-start` and pushed to a registry with `make push`.
