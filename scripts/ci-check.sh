@@ -27,14 +27,17 @@ run() {
   fi
 }
 
-header "Code format and linting…"
+header "Lint files…"
 run make lint
 
-header "Run tests…"
-run make test-coverage
+header "Check code format…"
+run make check-format
 
-header "Run typecheck…"
-run make typecheck
+header "Run tests and check test code coverage…"
+run make check-code-coverage
+
+header "Typecheck files…"
+run make check-types
 
 header "Build application…"
 run make build-app

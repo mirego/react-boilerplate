@@ -1,11 +1,18 @@
-# Configuration
-# -------------
+# Build configuration
+# -------------------
 
 APP_NAME = `grep -m1 name package.json | awk -F: '{ print $$2 }' | sed 's/[ ",]//g'`
 APP_VERSION = `grep -m1 version package.json | awk -F: '{ print $$2 }' | sed 's/[ ",]//g'`
 GIT_REVISION = `git rev-parse HEAD`
 DOCKER_IMAGE_TAG ?= latest
 DOCKER_REGISTRY ?=
+
+# Linter and formatter configuration
+# ----------------------------------
+
+PRETTIER_FILES_PATTERN = '{src,typings,__mocks__,scripts}/**/*.{js,ts,tsx}' '**/*.md'
+SCRIPTS_PATTERN = '{src,typings,__mocks__}/**/*.{js,ts,tsx}'
+STYLES_PATTERN = 'src/**/*.css'
 
 # Introspection targets
 # ---------------------
@@ -42,10 +49,6 @@ targets:
 # Build targets
 # -------------
 
-.PHONY: dependencies
-dependencies:
-	npm install
-
 .PHONY: build
 build: ## Build the Docker image
 	docker build --rm --tag $(APP_NAME):$(DOCKER_IMAGE_TAG) .
@@ -55,65 +58,60 @@ push: ## Push the Docker image
 	docker tag $(APP_NAME):$(DOCKER_IMAGE_TAG) $(DOCKER_REGISTRY)/$(APP_NAME):$(DOCKER_IMAGE_TAG)
 	docker push $(DOCKER_REGISTRY)/$(APP_NAME):$(DOCKER_IMAGE_TAG)
 
-# CI targets
-# ----------
+# Development targets
+# -------------------
 
-.PHONY: lint
-lint: lint-prettier lint-tslint lint-stylelint lint-stylelint-components ## Run lint tools on the code
-
-.PHONY: lint-prettier
-lint-prettier:
-	npx prettier -l '{src,typings,__mocks__,scripts}/**/*.{js,ts,tsx}' '**/*.md'
-
-.PHONY: lint-tslint
-lint-tslint:
-	npx tslint -c tslint.json '{src,typings,__mocks__}/**/*.{js,ts,tsx}'
-
-.PHONY: lint-stylelint
-lint-stylelint:
-	npx stylelint --config .stylelintrc.json 'src/**/*.css'
-
-.PHONY: lint-stylelint-components
-lint-stylelint-components:
-	npx stylelint --config .stylelintrc-components.json 'src/**/*.{js,ts,tsx}'
-
-.PHONY: lint-fix
-lint-fix: format lint-tslint-fix
-
-.PHONY: lint-tslint-fix
-lint-tslint-fix:
-	npx tslint -c tslint.json --fix '{src,typings,__mocks__}/**/*.{js,ts,tsx}'
-
-.PHONY: test
-test: ## Run the test suite
-	npm test
-
-.PHONY: test-coverage
-test-coverage: ## Run the test suite with the code coverage report
-	npm test -- --coverage
-
-.PHONY: format
-format: format-prettier ## Run formatting tools on the code
-
-.PHONY: format-prettier
-format-prettier:
-	npx prettier --write '{src,typings,__mocks__,scripts}/**/*.{js,ts,tsx}' '**/*.md'
-
-.PHONY: typecheck
-typecheck:
-	npx tsc
+.PHONY: dependencies
+dependencies: ## Install dependencies required by the application
+	npm install
 
 .PHONY: build-app
 build-app:
 	npm run build
 
-# Development targets
-# -------------------
+.PHONY: test
+test: ## Run the test suite
+	npm test
 
-.PHONY: dev-start
-dev-start: build ## Start every service of in the Docker Compose environment
+# Check, lint and format targets
+# ------------------------------
+
+.PHONY: check-format
+check-format:
+	npx prettier --check $(PRETTIER_FILES_PATTERN)
+
+.PHONY: check-code-coverage
+check-code-coverage:
+	npm test -- --coverage
+
+.PHONY: check-types
+check-types:
+	npx tsc
+
+.PHONY: format
+format: ## Format project files
+	npx prettier --write $(PRETTIER_FILES_PATTERN)
+	npx tslint -c tslint.json --fix $(SCRIPTS_PATTERN)
+
+.PHONY: lint
+lint: lint-scripts lint-styles ## Lint project files
+
+.PHONY: lint-scripts
+lint-scripts:
+	npx tslint -c tslint.json $(SCRIPTS_PATTERN)
+
+.PHONY: lint-styles
+lint-styles:
+	npx stylelint --config .stylelintrc.json $(STYLES_PATTERN)
+	npx stylelint --config .stylelintrc-components.json $(SCRIPTS_PATTERN)
+
+# Service container targets
+# -------------------------
+
+.PHONY: services-start
+services-start: build ## Start every service in the Docker Compose environment
 	docker-compose up
 
-.PHONY: dev-stop
-dev-stop: ## Stop every service of in the Docker Compose environment
+.PHONY: stop
+services-stop: ## Stop every service in the Docker Compose environment
 	docker-compose down
