@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://user-images.githubusercontent.com/11348/51913119-d31c4f00-23a3-11e9-9d04-582b96103e4b.png" width="600" />
+  <img src="https://user-images.githubusercontent.com/11348/57186235-4c4aa700-6ea9-11e9-88c3-3cd1ab858a32.png" width="600" />
   <p><br />This repository is the stable base upon which we build our React projects at Mirego.<br />We want to share it with the world so you can build awesome React applications too.</p>
   <a href="https://travis-ci.com/mirego/react-boilerplate"><img src="https://travis-ci.com/mirego/react-boilerplate.svg?branch=master" /></a>
 </div>
