@@ -53,7 +53,7 @@ $ npm start
 To create a production-ready build:
 
 ```bash
-$ npm run build
+$ make build-app
 ```
 
 ### Tests
@@ -69,17 +69,17 @@ $ make test
 Tests can also be ran while calculating test coverage level.
 
 ```bash
-$ make test-coverage
+$ make check-code-coverage
 ```
 
 ### Linting
 
 Several linting and formatting tools can be ran to ensure coding style consistency:
 
-- `make lint-prettier` ensures all code is properly formatted
-- `make lint-tslint` ensures TypeScript code follows our best practices
-- `make lint-stylelint` ensures CSS code follows our best practices
-- `make lint-stylelint-components` ensures CSS code in JavaScript modules follows our best practices
+- `make lint-scripts` ensures TypeScript code follows our best practices
+- `make lint-styles` ensures CSS code follows our best practices
+- `make check-format` ensures all code is properly formatted
+- `make check-types` ensures types match
 
 ### Continuous integration
 
