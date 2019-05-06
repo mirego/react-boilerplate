@@ -80,6 +80,7 @@ Several linting and formatting tools can be ran to ensure coding style consisten
 - `make lint-styles` ensures CSS code follows our best practices
 - `make check-format` ensures all code is properly formatted
 - `make check-types` ensures types match
+- `make format` formats files using Prettier
 
 ### Continuous integration
 
