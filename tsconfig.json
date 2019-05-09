@@ -1,41 +1,24 @@
 {
   "compilerOptions": {
-    "allowJs": false,
-    "allowUnreachableCode": false,
+    "allowJs": true,
     "allowSyntheticDefaultImports": true,
-    "forceConsistentCasingInFileNames": true,
     "jsx": "preserve",
-    "lib": [
-      "es7",
-      "es2017",
-      "dom",
-      "esnext.asynciterable"
-    ],
-    "moduleResolution": "node",
+    "lib": ["dom", "es2017"],
     "module": "esnext",
-    "noFallthroughCasesInSwitch": true,
+    "moduleResolution": "node",
     "noEmit": true,
-    "noImplicitReturns": true,
     "noUnusedLocals": true,
-    "pretty": true,
-    "rootDir": "src",
-    "resolveJsonModule": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "preserveConstEnums": true,
+    "removeComments": false,
     "skipLibCheck": true,
     "sourceMap": true,
     "strict": true,
-    "suppressImplicitAnyIndexErrors": true,
-    "target": "es2018",
-    "esModuleInterop": true,
+    "target": "esnext",
     "baseUrl": ".",
     "paths": {
-      "react-boilerplate/*": [
-        "./src/*"
-      ]
-    },
-    "isolatedModules": true
-  },
-  "include": [
-    "src",
-    "typings"
-  ]
+      "boilerplate/*": ["./*"]
+    }
+  }
 }
