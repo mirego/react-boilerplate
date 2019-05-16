@@ -112,6 +112,6 @@ lint-styles:
 services-start: build ## Start every service in the Docker Compose environment
 	docker-compose up
 
-.PHONY: stop
+.PHONY: services-stop
 services-stop: ## Stop every service in the Docker Compose environment
 	docker-compose down
