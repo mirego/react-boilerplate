@@ -38,8 +38,6 @@ When running scripts or `npm` commands, it is important that these variables are
 1. Create `.env.development.local` from empty values in [`.env.development`](./.env.development)
 2. Install NPM dependencies with `make dependencies`
 
-## ⌨️ Commandes
-
 ### Run the application in development mode
 
 To start a development server:
