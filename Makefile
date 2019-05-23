@@ -104,14 +104,3 @@ lint-scripts:
 lint-styles:
 	npx stylelint --config .stylelintrc.json $(STYLES_PATTERN)
 	npx stylelint --config .stylelintrc-components.json $(SCRIPTS_PATTERN)
-
-# Service container targets
-# -------------------------
-
-.PHONY: services-start
-services-start: build ## Start every service in the Docker Compose environment
-	docker-compose up
-
-.PHONY: services-stop
-services-stop: ## Stop every service in the Docker Compose environment
-	docker-compose down

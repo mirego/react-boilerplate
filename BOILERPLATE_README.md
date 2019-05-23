@@ -112,4 +112,4 @@ Each deployment is made from a Git tag. The codebase version is managed with [`i
 
 ### Container
 
-A Docker image running a Node.js server can be created with `make build`, tested with `make services-start` and pushed to a registry with `make push`.
+A Docker image running a Node.js server can be created with `make build`, tested with `docker-compose up application` and pushed to a registry with `make push`.
