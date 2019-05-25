@@ -16,7 +16,7 @@ This boilerplate comes with batteries included, you’ll find:
 - [TypeScript](https://www.typescriptlang.org)
 - Styled components with [emotions](https://emotion.sh)
 - Routing with [react-router](https://reacttraining.com/react-router/)
-- A clean and useful [`README.md`](./BOILERPLATE_README.md) template
+- A clean and useful `README.md` template (in both [english](./BOILERPLATE_README.md) and [french](./BOILERPLATE_README.fr.md))
 
 ## Usage
 
