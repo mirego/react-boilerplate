@@ -22,8 +22,10 @@
 
 ## 🚧 Dépendances
 
-- Node.js (`~> 12.14`)
-- NPM (`~> 6.13`)
+- Node.js
+- NPM
+
+Les versions canoniques des dépendances sont spécifiées dans les fichiers `Dockerfile` et `.tool-versions`.
 
 ## 🏎 Départ rapide
 
