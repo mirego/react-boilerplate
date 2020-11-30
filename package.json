@@ -2,7 +2,6 @@
   "name": "react-boilerplate",
   "version": "0.0.1",
   "private": true,
-  "engine-strict": true,
   "engines": {
     "node": "~12.14",
     "npm": "~6.13"
@@ -29,13 +28,8 @@
   },
   "scripts": {
     "start": "mirego-react-scripts start",
-    "build": "npm run enforce-engine-versions && mirego-react-scripts build",
-    "test": "TZ=UTC mirego-react-scripts test",
-    "enforce-engine-versions": "./scripts/enforce-engine-versions.js",
-    "preinstall": "npm run enforce-engine-versions",
-    "postinstall": "npm run enforce-engine-versions",
-    "prestart": "npm run enforce-engine-versions",
-    "prestest": "npm run enforce-engine-versions"
+    "build": "mirego-react-scripts build",
+    "test": "TZ=UTC mirego-react-scripts test"
   },
   "eslintConfig": {
     "extends": "react-app"
